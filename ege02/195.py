@@ -2,6 +2,6 @@ for x in 0,1:
     for y in 0,1:
         for z in 0,1:
             for w in 0,1:
-                f=(not(y or w)or not (not x or z))or(not x or w)
+                f=not (not(y or w)or (not x or z))or(not x or w)
                 if not f:
-                    print(x,y,z,w,"!",int(f))
+                    print(w, y,z,x,"!",int(f))
