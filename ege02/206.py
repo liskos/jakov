@@ -1,7 +1,7 @@
-for x in 0,1:
-    for y in 0,1:
-        for z in 0,1:
-            for w in 0,1:
-                f=w or(not x or y)and(z or x)
-                if not f:
-                      print(x,y,z,w,"!",int(f))
+for a in 0,1:
+    for b in 0,1:
+        for c in 0,1:
+            for d in 0,1:
+                f=(not a or d)and not(not b or c)
+                if f:
+                      print(a,b,c,d,"!",int(f))
