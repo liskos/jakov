@@ -1,13 +1,8 @@
 def alg(x):
-    a = x % 4
-    b = x % 2
-    c = x % 5
-    a = str(a) + str(b) + str(c)
-    return a
+    return str(x % 4) + str(x % 2) + str(x % 5)
 
 
-f=0
-a = []
 for i in range(10, 100):
     if alg(i) == '202':
-        print(i)
+        print(i, alg(i))
+

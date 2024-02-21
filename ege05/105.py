@@ -9,6 +9,6 @@ def alg(x):
 f=0
 a = []
 for i in range(10, 100):
-    if alg(i) == '311':
+    if alg(i) == '101':
         f=i
 print(f)
