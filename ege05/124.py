@@ -15,9 +15,11 @@ def f(x):
         v = str(s) + str(s1)
     return v
 
+
 h=0
 for i in range(1000,10000):
-    if f(i) == '37':
-        h = i
-print(h)
+    if f(i) == '1215':
+        print(i)
+        break
+
 
