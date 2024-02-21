@@ -3,7 +3,7 @@ def f(x):
     s = x//1000 + x//100%10
     s1 = x//100%10 + x//10%10
     s2 = x//10%10 + x%10
-    mi = min(s1,s2,s)
+    mi = max(s1,s2,s)
     if s1 == mi :
         s,s2 = min(s,s2),max(s,s2)
         v = str(s) + str(s2)

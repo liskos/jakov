@@ -18,8 +18,7 @@ def f(x):
 
 h=0
 for i in range(1000,10000):
-    if f(i) == '105':
+    if f(i) == '1713':
         print(i)
         break
-
 

@@ -18,8 +18,8 @@ def f(x):
 
 h=0
 for i in range(1000,10000):
-    if f(i) == '105':
-        print(i)
-        break
+    if f(i) == '145':
+        h=i
+print(h)
 
 
