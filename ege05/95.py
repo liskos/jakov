@@ -1,17 +1,17 @@
 def alg(n):
     s = bin(n)[2:]
     if s.count('1') % 2 == 0:
-        s += "1"
-    else:
         s += "0"
+    else:
+        s += "1"
     if s.count('1') % 2 == 0:
-        s += "1"
-    else:
         s += "0"
+    else:
+        s += "1"
     return int(s, 2)
 
-
-for i in range(1, 1000):
+ar = []
+for i in range(1, 1001):
     if alg(i) > 130:
-        print(i, alg(i))
-        break
+        ar.append(alg(i))
+print(min(ar))

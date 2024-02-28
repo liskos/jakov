@@ -1,11 +1,9 @@
 def f(n):
-    a = (n // 10000) + (n // 10 % 10) + (n % 10)
-    b = (n // 1000 % 10) + (n // 10 % 10)
-    if a > b:
-        n = str(b) + str(a)
-    if b > a:
-        n = str(a) + str(b)
-    return n
+    s1,s2,s3,s4,s5 = str(n)
+    a = int(s1) + int(s3) + int(s5)
+    b = int(s2) + int(s4)
+    a,b = max(a,b),min(a,b)
+    return str(b) + str(a)
 
 
 b = 0

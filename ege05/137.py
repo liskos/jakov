@@ -9,12 +9,13 @@ def f(n):
         b = '0'
     else:
         b = '1'
-    r+=b
-    return int(r,2)
+    r += b
+    return int(r, 2)
 
 
 k = 0
-for i in range(1,10000):
-    if 64<= f(i) <125:
-        k+=1
-print(k)
+m = set()
+for i in range(1, 10000):
+    if 64 <= f(i) < 72:
+        m.add(i)
+print(len(m))

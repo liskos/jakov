@@ -10,13 +10,12 @@ def f(n):
         n += '1'
     else:
         n += '0'
-    return int(n,2)
+    return int(n, 2)
 
 
-k = 0
-for i in range(16,33):
+m = set()
+for i in range(1, 100):
     r = f(i)
     if 16 <= r <= 32:
-        k += 1
-print(k)
-
+        m.add(r)
+print(len(m))

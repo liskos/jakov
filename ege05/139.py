@@ -1,22 +1,19 @@
 def f(n):
     n = bin(n)[2:]
-    n = int(n) + int(n) % 2
-    n = str(n)
+    n += n[-1]
     if n.count('1') % 2 == 0:
-        n = n + '0'
+        n += '0'
     else:
-        n = n + '1'
-    r = n
+        n += '1'
     if n.count('1') % 2 == 0:
-        r = n + '0'
+        n += '0'
     else:
-        r = n + '1'
-    return int(r,2)
+        n += '1'
+    return int(n,2)
 
 
-
-for i in range(114,10000):
+ar = []
+for i in range(1,10000):
     if f(i) > 144:
-        print(f(i))
-        break
-
+        ar.append(f(i))
+print(min(ar))

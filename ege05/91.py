@@ -1,13 +1,13 @@
 def alg(n):
     s = bin(n)[2:]
     if s.count('1') % 2 == 0:
-        s += "1"
-    else:
         s += "0"
+    else:
+        s += "1"
     if s.count('1') % 2 == 0:
-        s += "1"
-    else:
         s += "0"
+    else:
+        s += "1"
     return int(s, 2)
 
 

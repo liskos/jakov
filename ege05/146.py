@@ -1,19 +1,18 @@
 def alg(n):
     n = bin(n)[2:]
-    n += n[-1]
+    b = n + n[-1]
     if n.count('1') % 2 == 0:
-        n += n + '0'
+        b += '0'
     else:
-        n += n + '1'
-    r = n
-    if n.count('1') % 2 == 0:
-        r += '11'
+        b += '1'
+    if b.count('1') % 2 == 0:
+        b += '0'
     else:
-        r += '1'
-    return int(r,2)
+        b += '1'
+    return int(b, 2)
 
-
+m = []
 for i in range(1,1000):
     if alg(i) > 130:
-        print(alg(i))
-        break
+        m.append(alg(i))
+print(min(m))

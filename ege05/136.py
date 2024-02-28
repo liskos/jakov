@@ -1,21 +1,18 @@
 def f(n):
     n = bin(n)[2:]
     if n.count('1') % 2 == 0:
-        a = '0'
+        n += '0'
     else:
-        a = '1'
-    r = n + a
-    if r.count('1') % 2 == 0:
-        b = '0'
+        n += '1'
+    if n.count('1') % 2 == 0:
+        n += '0'
     else:
-        b = '1'
-    r+=b
-    return int(r,2)
+        n += '1'
+    return int(n, 2)
 
 
-
-k = 0
-for i in range(16,33):
-    if (16<= f(i) <= 32) == False:
-        k += 1
-print(k)
+m = set()
+for i in range(1, 1000):
+    if 16 <= f(i) <= 32:
+        m.add(f(i))
+print(len(range(16, 33)) - len(m))
