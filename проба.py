@@ -35,6 +35,5 @@ def algor(n):
     return r
 
 
-
 print(algor(int(input())))
 

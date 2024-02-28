@@ -12,6 +12,6 @@ def alg(n):
 
 
 for i in range(1, 1000):
-    if alg(i) > 103:
+    if alg(i) > 130:
         print(i, alg(i))
         break
