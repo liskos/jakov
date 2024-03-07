@@ -9,6 +9,9 @@ def f(n):
 
 print(f(13))
 
-for i in range(1,1000):
-    if f(i) < 130:
-        print(f(i))
+
+m = set()
+for i in range(90,161):
+    if f(i) > 0:
+        m.add(f(i))
+print(len(m))

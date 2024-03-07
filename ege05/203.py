@@ -10,5 +10,5 @@ def f(n):
 print(f(13))
 
 for i in range(1,1000):
-    if f(i) < 130:
+    if f(i) > 90:
         print(f(i))

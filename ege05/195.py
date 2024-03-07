@@ -1,16 +1,14 @@
 def f(n):
     b = bin(n)[2:]
-    while b != 0:
-        sum_of_digits = sum(int(digit) for digit in b)
-        b = b + str(sum_of_digits % 2)
-        if int(b,2 >= 50):
-            break
-    while b != 0:
-        sum_of_digits = sum(int(digit) for digit in b)
-        b = b + str(sum_of_digits)
-        if int(b,2 >= 50):
-            break
+    d = b.count('1')
+    b = b + str(d % 2)
+    d = b.count('1')
+    b = b + str(d % 2)
     return int(b,2)
 
 
 print(f(13))
+
+for i in range(1,1000):
+    if f(i) < 50:
+        print(f(i))
