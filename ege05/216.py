@@ -1,17 +1,16 @@
 def f(n):
-    s1,s2,s3 = str(n)
-    a = s1 + s2
-    b = s2 + s3
-    c = s1 + s3
-    d = s3 + s1
-    e = s2 + s1
-    v = s3 + s2
-    a,b = max(a,b,c,d,e,v),min(a,b,c,d,e,v)
-    return int(a) - int(b)
+    s = sorted(list(str(n)))
+    if s[0] != '0':
+        return int(s[2] + s[1]) - int(s[0] + s[1])
+    elif s[1] != '0':
+        return int(s[2] + s[1]) - int(s[1] + s[0])
+    else:
+        return 0
 
 
 print(f(351))
-
+k = 0
 for i in range(100,1000):
     if f(i) == 58:
-        print(i)
+        k += 1
+print(k)

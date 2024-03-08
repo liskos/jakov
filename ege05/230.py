@@ -8,7 +8,7 @@ def f(n):
 
 k = 0
 print(f(11))
-for i in range(150,201):
-    if f(i) == f(i):
+for i in range(2,201):
+    if 150 <= f(i) <= 200:
         k += 1
 print(k)

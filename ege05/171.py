@@ -5,7 +5,7 @@ def alg(n):
     return int(b,2)
 
 
-for i in range(130,256):
+for i in range(131,256):
     if alg(i) == 10 :
          print(i)
 

@@ -11,7 +11,7 @@ print(f(13))
 
 
 m = set()
-for i in range(210,261):
-    if f(i) > 0:
+for i in range(1,1000):
+    if 210 <= f(i) <= 260:
         m.add(f(i))
 print(len(m))

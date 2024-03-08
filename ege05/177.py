@@ -4,12 +4,10 @@ def f(n):
     b = b.replace('0', '8')
     b = b.replace('1', '0')
     b = b.replace('8', '1')
-    b = b + '1'
-    return int(b, 2)
+    b = int(b,2) + 1
+    return b
 
 
 
-for i in range(1,10000):
-    if i == 80:
-        print(f(i))
+print(f(80))
 

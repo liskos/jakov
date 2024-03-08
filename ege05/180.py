@@ -4,12 +4,8 @@ def f(n):
     b = b.replace('0', '8')
     b = b.replace('1', '0')
     b = b.replace('8', '1')
-    b = b + '1'
-    return int(b, 2)
+    return int(b, 2) + 1
 
 
 print(f(153))
-for i in range(1,1000):
-    if f(i) == 153:
-        print(i)
 
