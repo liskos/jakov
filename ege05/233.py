@@ -1,26 +1,18 @@
 def f(n):
-    n = bin(n)[2:]
-    if n.count('1') == n.count('0'):
-        n += n[-1]
-    elif n.count('1') > n.count('0'):
-        n += '0'
+    b = bin(n)[2:]
+    if b.count('1') > b.count('0'):
+        b += '0'
     else:
-        n += '1'
-    if n.count('1') == n.count('0'):
-        n += n[-1]
-    elif n.count('1') > n.count('0'):
-        n += '0'
+        b += '1'
+    if len(b) % 2 == 0:
+        b = b[:len(b) // 2 - 1] + b[len(b) // 2 + 1:]
     else:
-        n += '1'
-    if n.count('1') == n.count('0'):
-        n += n[-1]
-    elif n.count('1') > n.count('0'):
-        n += '0'
-    else:
-        n += '1'
-    return int(n,2)
+        b = b[:len(b) // 2 - 1] + b[len(b) // 2 + 2:]
+    return int(b,2)
 
 
-for i in range(1,1000):
-    if f(i) % 4 == 0:
-        print(i)
+ar = []
+for i in range(8,1000):
+    if f(i) == 58:
+        ar.append(f(i))
+print(len(ar))

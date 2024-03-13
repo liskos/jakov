@@ -1,13 +1,13 @@
 def f(n):
     b = bin(n)[2:]
-    c = b[0] + b[1]
-    if b.count('0') > 0:
-        b = b[:-1]
-        b = b + c
-        b = b[::-1]
-        return int(b,2)
-    else:
-        return int(b,2)
+    c = b[::-1]
+    if c.count('0') == 0:
+        return 0
+    c = c.replace('0','x',1)
+    c = c[::-1]
+    c = c.replace('x',b[:2] )
+    c = c[::-1]
+    return int(c,2)
 
 
 for i in range(2,1000):

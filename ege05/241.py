@@ -7,7 +7,6 @@ def f(n):
 
 ar = []
 for i in range(1,256):
-    if f(i) > 0:
         ar.append(f(i))
-print(ar[-1])
+print(max(ar))
 

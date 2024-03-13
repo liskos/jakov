@@ -14,6 +14,6 @@ def f(n):
     return n
 
 
-for i in range(1,1000):
+for i in range(1,10000):
     if f(i) == 8:
         print(i)
