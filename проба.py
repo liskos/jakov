@@ -37,3 +37,4 @@ def algor(n):
 
 print(algor(int(input())))
 
+

@@ -21,6 +21,6 @@ def f(n):
     return int(n,2)
 
 
-for i in range(1,1000):
-    if f(i) % 4 == 0:
+for i in range(2,10000):
+    if f(i) % 4 != 0 and f(i) % 2 == 0:
         print(i)

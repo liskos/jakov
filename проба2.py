@@ -23,3 +23,7 @@ def f(n):
     n = str(n) + b[1]
     print(n)
 print(f(16))
+
+b = 'asd'
+b = b[:-1]
+print(b)
