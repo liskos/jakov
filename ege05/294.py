@@ -1,15 +1,18 @@
 def f(n):
-    b = list(str,(n))
-    if n % 2:
-        b = b.sorted(reverse=True)
-        num = int(''.join(map(str, b)))
-        num //= 2
+    b = list(str(n))
+    if n % 2 == 0:
+        b.sort(reverse=True)
+        b = int(''.join(b))
+        b //= 2
     else:
-        b = b.sorted
+        b = sorted(b)
+        b = int(''.join(b))
         b *= 2
+    return b
 
 
 print(f(1488))
-for i in range(10,10000):
-    if f(i) > f(756) + 1:
+for i in range(1000,10000):
+    if f(i) == i + 1:
         print(f(i))
+        break

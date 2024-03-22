@@ -3,7 +3,7 @@ def g(h):
     return h
 def f(n):
     j = g(n)
-    if n % 2 == 0:
+    if sum(map(int,str(n))) % 2 == 0:
         j += str(n % 3)
     else:
         m = max(int(d) for d in j)
