@@ -1,21 +1,19 @@
-def f(n):
+def tr(n):
     s = ''
-    b = n
-    k = ''
-    while b > 0:
-        s += str(b % 3)
-        b //= 3
-    if n % 3 == 0:
-        s += s[-1] + s[-2]
-    else:
-        a = n % 3 * 5
-        while a > 0:
-            k += str(a % 3)
-            a //= 3
-        s += k
-    return int(s,3)
+    while n > 0:
+        s += str(n % 3)
+        n //= 3
+    return s[::-1]
 
-print(f(11))
+def f(n):
+    t = tr(n)
+    if n % 3 == 0:
+        t += t[-2:]
+    else:
+        t += tr(n % 3 * 5)
+    return int(t,3)
+
+print(f(11), f(12))
 for i in range(1,1000):
-    if f(i) > 133:
+    if 150>f(i) > 133:
         print(f(i))

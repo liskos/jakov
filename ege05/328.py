@@ -1,23 +1,14 @@
 def f(n):
-    n = str(n)
-    d = 0
-    for i in range(len(n)):
-        d += int(n[len(n)-1-i]) * (2 ** i)
-    return d
+    b = bin(n)[2:]
+    if n % 5 == 0:
+        b = '1' + b + b[-2:]
+    else:
+        b = bin(n % 5)[2:] + b
+    return int(b,2)
 
-def g(h):
-    m = 0
-    for i in range(223,0,-1):
-        b = bin(i)[2:]
-        if i % 5 == 0:
-            v = '1' + b[-2:]
-        else:
-            v = bin(i % 5)[2:] + b
-        d = f(v)
-        if d <= 223:
-            m = max(m,d)
-        return m
 
+print(f(13))
+print(f(10))
 for i in range(2,1000):
-    if g(i) <= 223:
+    if 200 <= f(i) <= 223:
         print(f(i))

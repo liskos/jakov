@@ -1,17 +1,16 @@
 def f(n):
     b = bin(n)[2:]
-    if n % 10:
-        b = b + b[-4] + b[-3] + b[-2] + b[-1]
-        return int(b,2)
+    if n % 10 == 0:
+        c = b + b[-4:]
     else:
-        c = int(b[-1]) ** 2 // 2
-        c = bin(int(b))[2:]
+        c = int(str(n)[-1]) ** 2 // 2
+        c = bin(c)[2:]
         c = b + c
-        return int(c,2)
+    return int(c,2)
 
-
+print(f(20))
 k=0
-for i in range(11,1000):
+for i in range(11,10000):
     if f(i) < 680:
         k+=1
 print(k)

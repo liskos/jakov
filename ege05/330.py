@@ -7,6 +7,8 @@ def f(n):
     return int(n,2)
 
 
+print(f(4))
+print(f(12))
 for i in range(1,1000):
     if f(i) < 170:
         print(f(i))

@@ -10,7 +10,8 @@ def f(n):
         b += '1'
     return int(b,2)
 
-
-for i in range(4,1000):
+a = []
+for i in range(10,1000000):
     if f(i) < 10**6:
-        print(i)
+        a.append(i)
+print(max(a))
