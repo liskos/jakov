@@ -6,7 +6,7 @@ def f(n):
     elif int(s1) % 2 == 0 and int(s1) % 4 != 0:
         n = str(n)[1:]
         n = '3' + n
-    return n
+    return int(n)
 
 
 n = 0
