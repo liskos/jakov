@@ -1,12 +1,12 @@
-def tr(n):
-    t = '0123456'
+def tr(n,i):
+    t = '0123456789'
     s = ''
     while n > 0:
-        s = t[n % 7] + s
-        n //= 7
+        s = t[n % i] + s
+        n //= i
     return s
-s = 43 * 7 ** 103 - 21 * 7 ** 57 + 98
-t = tr(s)
-b = sum(map(int,t))
-b = str(b)
-print(int(b,7))
+
+for n in range(2,11):
+    t = tr(1234,n)
+    print(sum(map(int,t)),n)
+

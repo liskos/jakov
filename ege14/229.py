@@ -6,6 +6,6 @@ def tr(n):
         n //= 6
     return s
 
-s = (66 + 6 * 2019 + 66 + 6 ** 6)
+s = (66 + 6 ** 2019) * 6 ** 2019 + 66 + 6 ** 6
 t = tr(s)
 print(sum(map(int,t)))
