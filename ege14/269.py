@@ -3,14 +3,16 @@ def tr(n, i):
     r = ''
     while n > 0:
         r = t[n % i] + r
-        n //= 10
+        n //= i
     return r
 
+def f(t):
+    for i in range(len(t) - 1):
+        if t[i] == t[i + 1]:
+            return False
+    return True
 
 for n in range(2, 11):
     t = tr(1988, n)
-    s, s2, s3, s4 = str(t)
-    print(s, s2, s3,s4, n)
-
-
-4 7 8
+    if f(t):
+        print(n)

@@ -3,11 +3,12 @@ def tr(n, i):
     r = ''
     while n > 0:
         r = t[n % i] + r
-        n //= 10
+        n //= i
     return r
 
 
 for n in range(2, 11):
     t = tr(1755, n)
-    s,s2,s3,s4 = str(t)
-    print(s,s2,s3,s4,n)
+    b = set(t)
+    if len(b) == len(t):
+        print(n)

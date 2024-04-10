@@ -8,5 +8,6 @@ def tr(n, i):
 p=0
 for i in range(2,11):
     s = tr(611,i)
-    print(s,i)
-2 9 10
+    if len(s) % 2 == 1:
+        p+=i
+print(p)

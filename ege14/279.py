@@ -5,9 +5,16 @@ def tr(n, i):
         s = t[n % i] + s
         n //= i
     return s
+
+
+def f(t):
+    for i in range(len(t)- 1):
+        if t[i] >= t[i + 1]:
+            return False
+    return True
 p=0
 for i in range(2,11):
-    s = sum(map(int,tr(123,i)))
-    if s % 2 == 0:
+    s = tr(123,i)
+    if f(s):
         p+=i
 print(p)

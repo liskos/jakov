@@ -3,12 +3,13 @@ def tr(n, i):
     r = ''
     while n > 0:
         r = t[n % i] + r
-        n //= 10
+        n //= i
     return r
 
-
+a = []
 for n in range(2, 11):
     t = tr(804, n)
-    s,s2,s3 = str(t)
-    print(s,s2,s3,n)
+    if '1' in t:
+        a.append(n)
+print(sum(a))
 

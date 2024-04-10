@@ -5,16 +5,21 @@ def tr(n):
          r = s[n % 3] + r
          n //= 3
     return r
-def g(j):
-    h = tr(j)
-    if j % 3 == 0:
-        j = str(j) + h[0] + h[1]
+
+
+def g(n):
+    t = tr(n)
+    if n % 3 == 0:
+        t = t + t[:2]
     else:
-        j = str(j) + tr(j % 3 * 5)
-    return int(j,3)
+        t = t + tr(n % 3 * 5)
+    return int(t,3)
 
 
+a = []
+print(g(11), g(12))
 for i in range(3,1000):
     if g(i) > 64:
-        print(g(i))
+        a.append(g(i))
+print(min(a))
 

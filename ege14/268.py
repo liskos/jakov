@@ -3,13 +3,17 @@ def tr(n, i):
     r = ''
     while n > 0:
         r = t[n % i] + r
-        n //= 10
+        n //= i
     return r
 
 
+def f(t):
+    for i in range(len(t) - 1):
+        if t[i] == t[i+1]:
+            return True
+    return False
+
 for n in range(2, 11):
     t = tr(572, n)
-    s, s2, s3 = str(t)
-    print(s, s2, s3, n)
-
-2 + 4 + 5
+    if f(t):
+        print(n)

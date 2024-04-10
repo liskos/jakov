@@ -9,4 +9,5 @@ p=0
 for i in range(2,11):
     s = sum(map(int,tr(559,i)))
     if s % 2 != 0:
-        print(i)
+        p += i
+print(p)

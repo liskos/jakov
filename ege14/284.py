@@ -5,9 +5,18 @@ def tr(n, i):
         s = t[n % i] + s
         n //= i
     return s
+
+def f(t):
+    for i in range(len(t) - 2):
+        if int(t[i + 1]) - int(t[i]) != int(t[i + 2]) - int(t[i + 1]):
+            return False
+    for i in range(len(t) - 1):
+        if t[i + 1] >= t[i]:
+            return False
+    return True
 p=0
 for i in range(2,11):
-    s = sum(map(int,tr(559,i)))
-    if s % 2 != 0:
-        p+=i
+    s = tr(210,i)
+    if f(s):
+        p += i
 print(p)

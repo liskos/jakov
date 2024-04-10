@@ -6,7 +6,18 @@ def tr(n,i):
         n //= i
     return r
 
+def f(s):
+    s =str(s)
+    for i in "02468":
+        s = s.replace(i,'*')
+    for d in '13579':
+        s = s.replace(d,'#')
+    return ("**" not in s) and ("##" not in s)
 
+
+a = []
 for i in range(2,11):
     t = tr(78,i)
-    print(t,i)
+    if f(t):
+        a.append(i)
+print(sum(a))
