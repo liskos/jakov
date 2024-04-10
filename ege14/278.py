@@ -7,7 +7,6 @@ def tr(n, i):
     return s
 p=0
 for i in range(2,11):
-    s = sum(map(int,tr(622,i)))
-    if s % 2 == 0:
-        p+=i
-print(p)
+    s = tr(622,i)
+    print(s,i)
+2  3 5 6 7 8
