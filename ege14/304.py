@@ -9,4 +9,4 @@ def tr(n):
 
 s = 7 ** 2103 - 6 * 7 ** 1270 + 3 * 7 ** 57 - 98
 t = tr(s)
-print(int(sum(map(int,t),7)))
+print(sum(map(int,t)))

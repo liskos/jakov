@@ -9,4 +9,4 @@ def tr(n):
 
 s = 6 ** 1333 - 5 * 6 ** 1215 + 3 * 6 ** 144 - 86
 t = tr(s)
-print(int(sum(map(int,t),6)))
+print(sum(map(int,t)))

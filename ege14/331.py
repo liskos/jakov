@@ -1,5 +1,5 @@
 def tr(n):
-    t = "*******7"
+    t = "0******7"
     s = ""
     while n > 0:
         s = t[n % 8] + s
@@ -9,4 +9,5 @@ def tr(n):
 
 s = 8 ** 888 + 15 * 15 ** 1515 - 2 ** 444
 t = tr(s)
+print(t)
 print(t.count('7*'))

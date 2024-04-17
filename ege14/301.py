@@ -7,8 +7,6 @@ def tr(n):
     return s
 
 
-s = 7 ** 103 + 6 * 7 ** 104 - 3 * 7 ** 57 + 98
-t = tr(s)
-t = int(t,7)
-t = sum(map(int,t))
-print(t)
+n = 7 ** 103 + 6 * 7 ** 104 - 3 * 7 ** 57 + 98
+s = tr(n)
+print(sum(map(int,s)))
