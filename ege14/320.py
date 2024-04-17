@@ -9,5 +9,5 @@ def tr(n):
 
 s = 1 * 3 ** 37 + 2 * 3 ** 23 + 3 * 3 ** 20 + 4 * 3 ** 4 + 5 * 3 ** 3 + 4 + 5
 t = tr(s)
-t = set(t)
-print(len(t))
+print(t)
+print(t.count('0'))
