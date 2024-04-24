@@ -1,6 +1,5 @@
-for x in "0123456789abcdefghijklmno":
-    s1 = f"1{x}23"
-    s2 = f"32{x}1"
-    s = int(s1, 44) - int(s2, 44)
-    if s % 131 == 0:
-        print(x, s // 131)
+for x in range(44):
+    m = 1 * 44 ** 3 + x * 44 ** 2 + 2 * 44 + 3
+    n = 3 * 44 ** 3 + 2 * 44 ** 2 + x * 44 + 1
+    if (m+n) % 42 == 0:
+        print(x,(m+n) // 42)

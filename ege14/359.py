@@ -1,7 +1,6 @@
-for x in "0123456789abcdefghijklmno":
-    for y in "0123456789a":
-        s1 = f"7{y}23{x}5"
-        s2 = f"67{x}9{y}"
-        s = int(s1, 25) - int(s2, 11)
-        if s  % 131 == 0:
-            print(x,y, s // 131)
+for x in range(25):
+    for y in range(11):
+        s1 = 7 * 25 ** 5 + y * 25 ** 4 + 2 * 25 ** 3 + 3 * 25 ** 2 + x * 25 + 5
+        s2 = 6 * 11 ** 4 + 7 * 11 ** 3 + x * 11 ** 2 + 9 * 11 + y
+        if (s1+s2) % 131 == 0:
+            print(x,(s1+s2) // 131)
