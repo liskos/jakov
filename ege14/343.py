@@ -1,12 +1,12 @@
 def tr(n):
-    k = 0
+    t = "0123456789abcdefghjklmnop"
+    s = ""
     while n > 0:
-        if n%64==0:
-            k += 1
-        n = n//64
-    return k
+        s = t[n % 25] + s
+        n //= 25
+    return s
 
 
-s = 7 * 512 ** 3200 + 6 * 256 ** 3100 - 5 * 64 ** 3000 - 4 * 8 ** 2900 - 1542
+s =
 t = tr(s)
-print(t)
+print(t.count('0'),t)
