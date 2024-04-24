@@ -8,5 +8,7 @@ def tr(n):
 
 
 s = 3 * 5 ** 1984 - 7 * 25 ** 777 - 11 * 125 ** 666 - 404
-t = tr(s)
+print(s)
+t = tr(abs(s))
+print(t)
 print(t.count('2'))

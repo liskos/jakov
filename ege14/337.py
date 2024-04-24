@@ -9,4 +9,4 @@ def tr(n):
 
 s = 4 * 8 ** 3032 + 3 * 16 ** 1956 + 870
 t = tr(s)
-print(t.count('3') - t.count('1'))
+print(3*t.count('3') - t.count('1'))
