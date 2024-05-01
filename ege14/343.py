@@ -7,6 +7,6 @@ def tr(n):
     return s
 
 
-s =
-t = tr(s)
+
+t = tr(100)
 print(t.count('0'),t)
