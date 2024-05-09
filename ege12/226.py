@@ -1,17 +1,11 @@
-def s(s):
+def f(s):
     while '23' in s:
         s = s.replace('23', '7', 1)
     return s
 
-def f(t):
-    total_sum = 82
-    min_twos = total_sum // 2
-    for twos_count in range(min_twos, total_sum + 1):
-        threes_count = (total_sum - 2 * twos_count) // 3
-        s = '22' * twos_count + '33' * threes_count
-        result = s(s)
-        if sum(map(int, result)) == total_sum:
-            return twos_count
-
-min_twos = s()
-print( min_twos)
+for n in range(1, 11):
+    s = "23" * n + (10 - n) * "3"
+    print(n, sum(map(int,f(s))))
+for n in range(11, 25):
+    s = "23" * 10 + (n-10) * "2"
+    print(n, sum(map(int,f(s))))

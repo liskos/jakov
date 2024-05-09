@@ -4,13 +4,9 @@ def f(s):
             s = s.replace('222','1',1)
     return s
 
-r = "11"
-min = r.count("1") + r.count("2")
-maxx = min * 3
 
-for i in range(min, maxx + 1):
-    s = "1" * i
-    output_string = f(s)
-    if output_string == r:
-        print(f"{i}")
+for n in range(41,1000):
+    s = "1" * n
+    if f(s) == "11":
+        print(n)
         break

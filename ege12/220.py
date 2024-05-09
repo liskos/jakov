@@ -4,11 +4,8 @@ def f(s):
         s = s.replace("4444","3",1)
     return s
 
-r = "43"
-m = r.count("3") + r.count("4")
-ma = m * 3
+for n in range(1,101):
+    s = "3" * n
+    if f(s) == "43":
+        print(n)
 
-for i in range(m,ma + 1):
-    s = "3" * i
-    if f(s) == r:
-        print(f"{i}")

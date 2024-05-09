@@ -1,9 +1,10 @@
-count = set()
-for i in range(33):
-    s = "1" + "1" * i
+def f(s):
     while "111" in s:
         s = s.replace("111", "33", 1)
         s = s.replace("333", "1")
-    count.add(s.count("1"))
+    return s
 
-print(len(count))
+for n in range(1, 36):
+    s = "1" * n
+    if f(s) == "131":
+        print(n,s)

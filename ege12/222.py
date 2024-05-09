@@ -5,14 +5,7 @@ def f(s):
         s = s.replace("333","1",1)
     return s
 
-r = "321"
-m = r.count("1") + r.count("2") + r.count("3")
-ma = m * 3
-
-res = set()
-for i in range(1,101):
-    s = "1" * i
-    if f(s) == r:
-        res.add(f(s).count('1'))
-print(res)
-
+for n in range(1, 101):
+    s = "1" * n
+    if f(s) == "321":
+        print(n,s)
