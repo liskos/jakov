@@ -7,5 +7,5 @@ def f(s):
     return s
 
 
-s = "112" * 5 + "11" * (13)
+s = "112" * 5 + "1" * (13)
 print(sum(map(int,f(s))), f(s))

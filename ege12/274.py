@@ -5,4 +5,4 @@ def f(s):
     return s
 
 s = "3" * 70
-print(f(s))
+print(sum(map(int,(f(s)))))

@@ -1,11 +1,17 @@
 def f(s):
     while "111" in s:
         s = s.replace("111","2",1)
-        s = s.replace("2222","11",1)
+        s = s.replace("2222","1",1)
     return s
 
-for i in range(137,160):
+
+a = []
+for i in range(138,500):
   s = "1" * i
-  b = f(s)
-  if b.count("1") >= 2:
-    print(len(s),b.count("1"))
+  a.append(f(s).count("1"))
+m = max(a)
+for i in range(138,500):
+  s = "1" * i
+  if f(s).count("1") == m:
+      print(len(s))
+      break

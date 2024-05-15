@@ -6,6 +6,6 @@ def f(s):
             s = s.replace("11","3",1)
     return s
 
-for i in range(1, 30):
-    s = "112" * 4 + "11" * (4)
-    print(i, sum(map(int,f(s))), f(s))
+
+s = "112" * 4 + "1" * 4
+print(sum(map(int,f(s))), f(s))

@@ -6,5 +6,5 @@ def f(s):
     return s
 
 
-s =
+s = "1007" + "0" * 67
 print(f(s))
