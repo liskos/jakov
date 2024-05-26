@@ -6,8 +6,10 @@ def f(s):
     return s
 
 
-s = "0" + "1" * 28 + "2" * 34 + "3" * 45
-
-b = f(s)
-print(b.count("1"),b)
-
+for x in range(1,50):
+    for y in range(1,50):
+        for z in range(1,50):
+            s = "0" + "1" * x + "2" * y + "3" * z
+            b = f(s)
+            if b.count("1") == 28 and b.count("2") == 34 and b.count("3") == 45:
+                print(x)
