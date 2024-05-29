@@ -11,5 +11,5 @@ def f(s):
 
 for i in range(4,100):
     s = "3" + "5" * i
-    if "3" not in f(s):
+    if set(f(s)) == {"5"} :
         print(i)
