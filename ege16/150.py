@@ -1,7 +1,5 @@
 import functools, sys
-sys.setrecursionlimit(6000)
-
-
+sys.setrecursionlimit(60000)
 @functools.lru_cache(None)
 def f(n):
     if n <= 3:

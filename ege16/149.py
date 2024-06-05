@@ -1,7 +1,6 @@
 import functools,sys
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(1000000000)
 
-@functools.lru_cache(None)
 def f(n,m):
     if m > n:
         return 0
