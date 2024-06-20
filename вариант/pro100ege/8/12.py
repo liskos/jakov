@@ -9,7 +9,7 @@ def f(s):
     return s
 
 a = set()
-for i in range(3,10000):
+for i in range(4,10000):
     s = "1" + "2" * i
-    a.add((sum(map(int,f(s)))))
+    a.add(sum(map(int,f(s))))
 print(max(a))
