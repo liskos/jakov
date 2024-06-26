@@ -6,4 +6,4 @@ def f(a,b):
     return f(a+1,b)+f(a+2,b)
 
 
-print(f(3,  15)+f(3,14))
+print(f(3,15)+f(3,14))
