@@ -12,6 +12,6 @@ def f(s):
 a = []
 for i in range(4,10000):
     s = "5" + "7" * i
-    a.append(sum(map(int,s)))
+    a.append(sum(map(int,f(s))))
 
 print(max(a))

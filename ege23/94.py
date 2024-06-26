@@ -4,6 +4,8 @@ def f(a,b):
         return 1
     if a < b:
         return 0
+    if a <= 4:
+        return f(a - 1, b) + f(a - 3, b)
     return f(a-1,b)+f(a-3,b)+f(a % 4,b)
 
 
