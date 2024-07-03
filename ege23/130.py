@@ -1,11 +1,9 @@
-def f(a,b):
-    if a == b:
-        return 1
-    if a > b:
-        return 0
-    return f(a+2,b)+f(a+3,b)+f(a*2,b)
-
-
-print(f(3,12)*f(12,25))
-
-
+a = {10}
+for i in range(1,6):
+    b = set()
+    for x in a:
+        b.add(x+2)
+        b.add(x+3)
+        b.add(x*2)
+    a = b.copy()
+print(len(a))

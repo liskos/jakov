@@ -1,7 +1,9 @@
-
-def f(a,b,k):
-    if k == 4:
-        return f(a+1,k+1)+f(a+5,k+1)+f(a*3,k+1)
-        b.append(a)
-
-print(f(1,0,0))
+a = {1}
+for i in range(4):
+    b = set()
+    for x in a:
+        b.add(x+1)
+        b.add(x+5)
+        b.add(x*3)
+    a = b.copy()
+print(len(a))

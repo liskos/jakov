@@ -3,9 +3,7 @@ def f(a,b):
         return 1
     if a > b:
         return 0
-    if a == 18 or a == 10:
-        return f(a+2,b)+f(a*2,b)
     return f(a+2,b)+f(a+3,b)+f(a*2,b)
 
 
-print(f(3,20))
+print(f(3,10)+f(3, 18))
