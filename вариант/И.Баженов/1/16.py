@@ -3,7 +3,7 @@ sys.setrecursionlimit(10000)
 def f(n):
     if n >= 15000:
         return n - 14500
-    if 500 < n <= 15000:
+    if 5000 < n <= 15000:
         return f(n+5)+2*n-6
     if 500 < n <= 5000:
         return 3*n+f(n+3)
