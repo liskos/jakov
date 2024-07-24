@@ -1,8 +1,9 @@
 def f(a,b,c):
-    if a>b or (c % 2 != 0 and a % 2 != 0):
+    if a>b:
         return 0
-    if a == b:
+    if sum(map(int,str(a))) == 14:
+        c+=1
+    if a == b and c == 5:
         return 1
-    if a<b:
-        return f(a+2,b,a)+f(a*3,b,a)+f(a*4,b,a)
+    return f(a+2,b,c)+f(a*3,b,c)+f(a*4,b,c)
 print(f(1,600,0))

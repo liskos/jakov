@@ -1,3 +1,4 @@
+
 def f(a, b, k=0):
     if a == b and k <= 2:
         return 1
