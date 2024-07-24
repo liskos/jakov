@@ -1,5 +1,5 @@
 
-def f(a,b,c):
+def f(a,b,c=False):
     if a == b:
         return 1
     if a > b :
@@ -11,5 +11,5 @@ def f(a,b,c):
     return f(a+1,b,False)+f(a+3,b,False)+f(a*2,b,True)
 
 
-print(f(2,18,False)*f(18,51,False))
+print(f(2,18)*f(18,51))
 
