@@ -7,8 +7,9 @@ def f(n):
     return int(b,2)
 
 print(f(12),f(4))
-
+a = []
 for i in range(1,1500):
     if f(i) > 151:
-        print(f(i))
-        break
+        a.append(f(i))
+
+print(min(a))
