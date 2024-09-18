@@ -1,6 +1,8 @@
 import itertools
 b = set()
-for i,a in enumerate(itertools.product("ВЕКНО",repeat=5),1):
-    if "".join(a).count("Н")==2 and "".join(a).count("К")==2:
-        print(a,i)
+k = 0
+for a in (itertools.product("АЕС",repeat=6)):
+    if a[0] in "АЕ":
+        k = k+1
+        print(a,k)
 

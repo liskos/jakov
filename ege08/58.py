@@ -1,7 +1,9 @@
 import itertools
 b = set()
 for a in itertools.product("ПИРОГ",repeat=4):
-    if ("".join(a).count("О") < 3) and "ИО" not in "".join(a) and a[0] != "О" :
+    ss = "".join(a).replace("Р","П").replace("Г","П")
+    ss = ss.replace("ПО","ХХ")
+    if (a.count("О") < 3) and ("О" not in ss):
         b.add(a)
 print(len(b),b)
 
