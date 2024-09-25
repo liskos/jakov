@@ -1,7 +1,8 @@
 import itertools
 b = set()
-for i,a in enumerate(itertools.product("АВИКНСТ",repeat=4),1):
+k=0
+for a in itertools.product("АВИКНСТ",repeat=4):
     if a[0] not in "АИ" and a[-1] in "АИ":
-        if "".join(a) == "НИКА":
-            print(i)
-
+        k += 1
+    if "".join(a) == "НИКА":
+            print(k)

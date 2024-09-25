@@ -6,4 +6,4 @@ def f(n):
     if n > 1:
         return 2*n + f(n-1)
 
-print(f(57693))
+print(sum(int(x) for x in str(f(57693)))**2)
