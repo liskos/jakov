@@ -3,7 +3,7 @@ def f(s):
         if "33333" in s:
             s = s.replace("33333","111",1)
         else:
-            s = s.replace("111","33")
+            s = s.replace("111","33",1)
     return s
 
 s = "3" * 111

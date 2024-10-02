@@ -1,8 +1,7 @@
 import itertools
 b = set()
-for a in (itertools.product("САМОКАТ",repeat=7)):
-    ss = "".join(a).replace("САМ","hjk")
-    if ss.count("hjk") == 1 and ss.find("k") != 6:
-        if ss[int(ss.find("h"))-1] == ss[int(ss.find("k"))+1]:
-            b.add(a)
+for a in (itertools.product("САМОКТ",repeat=7)):
+    ss = "".join(a).replace("САМ","*")
+    if ss.count("*") == 1 and "*" in ss[1:-1] and (ss[ss.find("*")-1] == ss[ss.find("*") + 1]) and ss[ss.find("*") - 1] in "АО":
+        b.add(a)
 print(len(b),b)
