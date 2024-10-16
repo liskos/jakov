@@ -1,7 +1,15 @@
 import ipaddress
-net = ipaddress.ip_network("186.135.80.0/255.255.252.0",0)
-b = set()
-for ip in net:
-     if ip.__format__("b")[0:14].count("1") > ip.__format__("b")[15:31].count("1"):
-         b.add(ip)
-print(len(b))
+for m in range(16,25):
+    net = ipaddress.ip_network(f"117.157.2.8/{m}",0)
+    f = True
+    for ip in net:
+        if ip.__format__("b")[:16].count("1") < ip.__format__("b")[16:].count("1"):
+            f = False
+    if f:
+        print(net.netmask)
+
+# import ipaddress
+# for m in range(16,25):
+#     net = ipaddress.ip_network(f"117.157.2.8/{m}",0)
+#     if all(ip.__format__("b")[:16].count("1") >= ip.__format__("b")[16:].count("1") for ip in net):
+#         print(net.netmask)
