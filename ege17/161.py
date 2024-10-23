@@ -3,6 +3,6 @@ r = []
 
 for i in range(len(a)-1):
     if ((a[i] + a[i+1]) % 2 == 0) and str(a[i] + a[i+1])[-1] != "6":
-        r.append(a[i] + a[i+1] / 2)
+        r.append((a[i] + a[i+1]) / 2)
 
 print(len(r),max(r))

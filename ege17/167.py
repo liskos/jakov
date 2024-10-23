@@ -3,6 +3,6 @@ r = []
 
 for i in range(len(a)-3):
 
-    if (a[i] % 2 == 0 and a[i+1] % 2 != 0) or (a[i] % 2 != 0 and a[i+1] % 2 == 0) and (a[i+1] % 2 == 0 and a[i+2] % 2 != 0) or (a[i+1] % 2 != 0 and a[i+2] % 2 == 0) and (a[i+2] % 2 != 0 and a[i+3] % 2 == 0) or (a[i+2] % 2 == 0 and a[i+3] % 2 != 0):
+    if a[i] % 2 != a[i+1] % 2 != a[i+2] % 2 != a[i+3] % 2:
         r.append(a[i]+a[i+1]+a[i+2]+a[i+3])
 print(len(r),max(r))
