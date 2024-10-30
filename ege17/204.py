@@ -1,8 +1,8 @@
-a = [int(x) for x in open("17data/17-199.txt")]
+a = [int(x) for x in open("17data/17-204.txt")]
 r = []
 
 def f(x):
-    return 10<=x<=99 and x % 2 != 0
+    return 0 > x and x % 10 == 9
 
 
 for i in range(len(a)-2):
