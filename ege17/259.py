@@ -1,17 +1,9 @@
 a = [int(x) for x in open("17data/17-257.txt")]
-r = []
-b = []
-n = []
-for x in range(len(a)):
-    if a[x] % 11 == 0:
-        b.append(a[x])
-    if a[x] % 17 == 0:
-        n.append(a[x])
+b11 = [x for x in a if x % 11 == 0]
+b17 = [x for x in a if x % 17 == 0]
 
-for i in range(len(a) - 1):
-    if max(b) > max(n):
-        r = b
-    else:
-        r = n
 
-print(len(r), max(r))
+if max(b11) > max(b17):
+    print(len(b11),min(b11))
+else:
+    print(len(b17), max(b17))

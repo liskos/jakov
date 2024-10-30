@@ -4,7 +4,7 @@ r = []
 average = sum(a) / len(a)
 
 def f(x):
-    return str(x).count("5") > 0
+    return str(x).count("5") == 0
 def d(x):
     return x < average
 for i in range(len(a) - 1):

@@ -6,7 +6,7 @@ def f(x):
     return x % 7 == 0
 
 for i in range(len(a)-1):
-    if f(a[i]) or f(a[i+1]) and (a[i]+a[i+1]) % 5 == 0:
+    if (f(a[i]) or f(a[i+1])) and (a[i]+a[i+1]) % 5 == 0:
         r.append(a[i]+a[i+1])
 
 print(len(r),max(r))

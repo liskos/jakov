@@ -9,8 +9,8 @@ def sem(n):
         n //= 7
     return s
 
-for i in range(len(a)-2):
-    if sem(abs(a[i] + a[i+1]))[::-1] == sem(abs(a[i] + a[i+1]))[::-1]:
-        r.append(sem(abs(a[i] + a[i+1]))[::-1])
+for i in range(len(a)-1):
+    if sem((a[i] + a[i+1])) == sem((a[i] + a[i+1]))[::-1]:
+        r.append((a[i] + a[i+1]))
 
-print(len(r),max(r))
+print(len(r),sem(max(r)))

@@ -7,7 +7,7 @@ def f(x):
     return x < average
 
 for i in range(len(a) - 1):
-    if (abs(a[i]) % 100 == 19) or (abs(a[i+1]) % 100 == 19) and (f(a[i]) and f(a[i+1])):
+    if ((abs(a[i]) % 100 == 19) or (abs(a[i+1]) % 100 == 19)) and (f(a[i]) and f(a[i+1])):
         r.append(a[i] + a[i+1])
 
 print(len(r), max(r))
