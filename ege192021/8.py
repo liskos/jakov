@@ -7,24 +7,26 @@ for x in range(200):
         if x+y>= 75:
             a[x][y] = "0"
 
-for x in range(200):
-    for y in range(200):
-        if a[x][y] == " " and all(a[i][j] == "0" for i,j in f(x,y)):
+for x in range(75):
+    for y in range(75):
+        if a[x][y] == " " and any(a[i][j] == "0" for i,j in f(x,y)):
             a[x][y] = "1"
 
-for x in range(200):
-    for y in range(200):
-        if a[x][y] == " " and any(a[i][j] == "1" for i,j in f(x,y)):
+for x in range(75):
+    for y in range(75):
+        if a[x][y] == " " and all(a[i][j] == "1" for i,j in f(x,y)):
             a[x][y] = "2"
-for x in range(200):
-    for y in range(200):
-        if a[x][y] == " " and all(a[i][j] in "02" for i,j in f(x,y)):
+for x in range(75):
+    for y in range(75):
+        if a[x][y] == " " and any(a[i][j] in "02" for i,j in f(x,y)):
             a[x][y] = "3"
-for x in range(200):
-    for y in range(200):
-        if a[x][y] == " " and any(a[i][j] in "13" for i,j in f(x,y)):
+for x in range(75):
+    for y in range(75):
+        if a[x][y] == " " and all(a[i][j] in "13" for i,j in f(x,y)):
             a[x][y] = "4"
+import sys
+sys.stdout = open("8.xls",mode="x")
+for i in range(1,200):
+    print(*a[i][1:200],sep="\t")
 
 
-print([i for i in range(1,75) if a[7][i] == "3"])
-print([i for i in range(1,75) if a[7][i] == "4"])

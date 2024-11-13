@@ -1,27 +1,33 @@
-def f(x):
-    return (x + 1), (x * 2)
+def f(x,y):
+    return (x+2,y),(x,y+2),(x*2,y),(x,y*2)
 
-# Создаем массив для хранения состояний игры для каждой позиции от 0 до 199
-a = [" "] * 200
+a = [[" "]* 200 for _ in range(200)]
+for x in range(200):
+    for y in range(200):
+        if x+y>= 62:
+            a[x][y] = "0"
 
-# Определяем базовые состояния, когда игрок уже не может совершить ход (выигрыш Вани)
-for x in range(54, 200):
-    a[x] = "0"  # "0" — это проигрышное состояние для того, кто ходит
+for x in range(62):
+    for y in range(62):
+        if a[x][y] == " " and any(a[i][j] == "0" for i,j in f(x,y)):
+            a[x][y] = "1"
 
-# Заполняем массив для всех позиций от 0 до 53
-for x in range(53, -1, -1):
-    # Проверка на наличие выигрыша Пети
-    if any(a[i] == "0" for i in f(x) if i < 200):
-        a[x] = "1"  # "1" — это выигрышное состояние для Пети
-    elif all(a[i] == "1" for i in f(x) if i < 200):
-        a[x] = "2"  # "2" — это проигрышное состояние для Пети
-    elif any(a[i] in "02" for i in f(x) if i < 200):
-        a[x] = "3"  # "3" — это выигрышное состояние для Вани
-    elif all(a[i] in "13" for i in f(x) if i < 200):
-        a[x] = "4"  # "4" — это проигрышное состояние для Вани
+for x in range(62):
+    for y in range(62):
+        if a[x][y] == " " and all(a[i][j] == "1" for i,j in f(x,y)):
+            a[x][y] = "2"
+for x in range(62):
+    for y in range(62):
+        if a[x][y] == " " and any(a[i][j] in "02" for i,j in f(x,y)):
+            a[x][y] = "3"
+for x in range(62):
+    for y in range(62):
+        if a[x][y] == " " and all(a[i][j] in "13" for i,j in f(x,y)):
+            a[x][y] = "4"
 
-# Находим позиции, где Ваня выигрывает первым ходом (состояние "4")
-print([i for i in range(1, 54) if a[i] == "4"])
-
-# Находим минимальное S, где Ваня выигрывает при любом ходе Пети
-print("Минимальное S, где Ваня выигрывает:", min([i for i in range(1, 54) if a[i] in "34"]))
+import sys
+sys.stdout = open("11.xls",mode="x")
+for i in range(1,200):
+    print(*a[i][1:200],sep="\t")
+print([i for i in range(1,69) if a[7][i] == "3"])
+print([i for i in range(1,69) if a[7][i] == "4"])

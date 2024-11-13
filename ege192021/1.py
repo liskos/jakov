@@ -27,7 +27,6 @@ for x in range(75):
 # sys.stdout = open("1.xls",mode="x")
 # for i in range(1,200):
 #     print(*a[i][1:200],sep="\t")
-
-print([i for i in range(1, 75) if a[7][i] == "3"])
-print([i for i in range(1,75) if a[7][i] == "4"])
-print("Минимальное S, где Ваня выигрывает:", min([i for i in range(1, 75) if a[7][i] in "34"]))
+print("19",[i for i in range(1,75)if a[7][i] == "1"])
+print("20",[i for i in range(1, 75) if a[7][i] == "3"])
+print("21",[i for i in range(1,75) if a[7][i] == "4"])
