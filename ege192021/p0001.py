@@ -23,3 +23,4 @@ for x in range(77):
             a[x][y] = "4"
 print([i for i in range(1, 77) if a[7][i] == "3"])
 print([i for i in range(1,77) if a[7][i] == "4"])
+print("Минимальное S, где Ваня выигрывает:", min([i for i in range(1, 77) if a[7][i] in "34"]))
