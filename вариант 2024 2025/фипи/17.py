@@ -4,10 +4,10 @@ b = []
 
 
 def f(x):
-    return x % r
+    return x % r == 0
 
 for i in range(len(a)-1):
-    if f(a[i]) or f(a[i]):
+    if f(a[i]) or f(a[i+1]):
         b.append(a[i]+a[i+1])
 
 print(len(b),max(b))

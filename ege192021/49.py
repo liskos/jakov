@@ -1,12 +1,6 @@
 import sys
 def f(x,y):
-    if (x / 2) % 2 != 0:
-        return (x-1,y),(x,y-1),(x//2+1,y),(x,y//2)
-    if (x / 2) % 2 != 0 and (y / 2) % 2 != 0:
-        return (x - 1, y), (x, y - 1), (x // 2 + 1, y), (x, y // 2 + 1)
-    if (y / 2) % 2 != 0:
-        return (x-1,y),(x,y-1),(x//2,y),(x,y//2+1)
-    return (x-1,y),(x,y-1),(x//2,y),(x,y//2)
+    return  (x-1,y),(x,y-1),((x+1)//2,y),(x,(y+1)//2)
 
 a = [[" "]*200 for _ in range(200)]
 
