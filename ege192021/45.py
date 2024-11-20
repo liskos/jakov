@@ -1,9 +1,9 @@
 def f(x):
-    return x+1,x+2,x+3,x*2
+    return x+1,x+2,x*3
 
 a = [" "]* 200
 for x in range(200):
-    if x>= 34:
+    if x>= 65:
         a[x] = "0"
 
 for x in range(200):
@@ -19,6 +19,6 @@ for x in range(200):
     if a[x] == " " and all(a[i] in "13" for i in f(x)):
         a[x] = "4"
 import sys
-sys.stdout = open("43.xls",mode="x")
+sys.stdout = open("45.xls",mode="x")
 print(*a[1:200],sep="\t")
 
