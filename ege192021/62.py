@@ -1,5 +1,5 @@
 def f(x,y):
-    return (x+1,y),(x*2,y)
+    return (x+1,y),(x*2,y),(x,y+1),(x,y*3)
 
 a = [[" "]* 550 for _ in range(550)]
 for x in range(550):
@@ -23,7 +23,7 @@ for x in range(30):
         if a[x][y] == " " and all(a[i][j] in "13" for i,j in f(x,y)):
             a[x][y] = "4"
 import sys
-sys.stdout = open("62.xls",mode="x")
+sys.stdout = open("63.xls",mode="x")
 for i in range(1,550):
     print(*a[i][1:550],sep="\t")
 

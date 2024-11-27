@@ -1,5 +1,5 @@
 def f(x,y):
-    return (x+2,y),(x*3,y)
+    return (x+2,y),(x*3,y),(x,y*3),(x,y+2)
 
 a = [[" "]* 200 for _ in range(200)]
 for x in range(200):
