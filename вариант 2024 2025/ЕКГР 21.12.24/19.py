@@ -22,4 +22,4 @@ for x in range(132):
 
 import sys
 sys.stdout = open("19.xls",mode="x")
-print(*a[1:300],sep="\n")
+print(*a[1:300],sep="\t")
