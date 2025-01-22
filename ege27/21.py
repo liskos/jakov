@@ -21,23 +21,29 @@ def visual(clasters):
             turtle.dot(10,colors[i%len(colors)])
     turtle.done()
 
-def get_centroid(claster):
+def get_max_min(claster1,claster2):
     r = []
-    for p1 in claster:
-        r+= [[sum(math.dist(p1,p2)for p2 in claster),p1]]
-    return min(r)[1]
+    for p1 in claster1:
+        r+= [math.dist(p1,p2)for p2 in claster2]
+    return max(r),min(r)
+
 
 data = [list(map(float,line.split())) for line in open("27data/27-21a.txt")]
-clasters = clasterizasion(data,0.5)
-centroid = [get_centroid(c) for c in clasters]
-x, y = sum(x[0] for x in centroid) / len(centroid), sum(x[1] for x in centroid) / len(centroid)
-print(x*10000,y*10000)
+clasters = clasterizasion(data,1)
+clasters.remove(clasters[2])
+print([len(c)for c in clasters])
+
+d_max,d_min = get_max_min(clasters[0],clasters[1])
+print(d_min*10000,d_max*10000)
 
 data = [list(map(float,line.split())) for line in open("27data/27-21b.txt")]
-clasters = clasterizasion(data,0.8)
-centroid = [get_centroid(c) for c in clasters]
-x, y = sum(x[0] for x in centroid) / len(centroid), sum(x[1] for x in centroid) / len(centroid)
-print(x*10000,y*10000)
+clasters = clasterizasion(data,1)
+print([len(c)for c in clasters])
 
-#39780 56934
+clasters.remove(clasters[2])
+
+d_max,d_min = get_max_min(clasters[0],clasters[1])
+print(d_min*10000,d_max*10000)
+
+#52076 47744
 #57501 43022
