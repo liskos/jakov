@@ -16,9 +16,9 @@ def visual(clasters):
     turtle.up()
     turtle.tracer(0)
     colors = ["red","yellow","pink","orange"]
-    for i,colors in enumerate(clasters):
-        for x,y in clasters:
-            turtle.goto(x*50,y*50)
+    for i,claster in enumerate(clasters):
+        for x,y in claster:
+            turtle.goto(x*30,y*30)
             turtle.dot(15,colors[i%len(colors)])
     turtle.done()
 
@@ -32,4 +32,12 @@ data = [list(map(float,line.split()))for line in open("27data/27-7a.txt")]
 clasters = clasterizasion(data,0.8)
 centroid = [get_centroid(c)for c in clasters]
 x,y = sum(x[0] for x in centroid)/len(centroid),sum(x[1] for x in centroid) / len(centroid)
-
+print(x*10000,y*10000)
+data = [list(map(float,line.split()))for line in open("27data/27-7b.txt")]
+clasters = clasterizasion(data,0.3)
+centroid = [get_centroid(c)for c in clasters]
+x,y = sum(x[0] for x in centroid)/len(centroid),sum(x[1] for x in centroid) / len(centroid)
+visual(clasters)
+print(x*10000,y*10000)
+#76006 -18319
+#2481 40247
