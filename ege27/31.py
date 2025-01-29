@@ -33,7 +33,7 @@ clasters = clasterization(data,0.7778889)
 clasters =  [c for c in clasters if len(c) > 8]
 centroid = [get_centroid(c)for c in clasters]
 print([len(c) for c in clasters])
-x, y = get_centroid(centroid)
+x, y = sum(x[0] for x in centroid) / len(centroid),sum(x[1] for x in centroid) / len(centroid)
 
 print(x*10000,y*10000)
 
@@ -43,7 +43,7 @@ clasters = clasterization(data,0.4)
 print([len(c) for c in clasters])
 clasters =  [c for c in clasters if len(c) > 8]
 centroid = [get_centroid(c)for c in clasters]
-x, y = get_centroid(centroid)
+x, y = sum(x[0] for x in centroid) / len(centroid),sum(x[1] for x in centroid) / len(centroid)
 visual(clasters)
 
 print(x*10000,y*10000)

@@ -38,11 +38,11 @@ print(x*100000,y*100000)
 
 
 data = [list(map(float,line.split()))for line in open("27data/27-30b.txt")]
-clasters = clasterization(data,0.4)
+clasters = clasterization(data,0.8)
 print([len(c) for c in clasters])
 clasters =  [c for c in clasters if len(c) > 8]
 centroid = [get_centroid(c)for c in clasters]
-x, y = get_centroid(centroid)
+x, y = sum(x[0] for x in centroid) / len(centroid),sum(x[1] for x in centroid) / len(centroid)
 visual(clasters)
 print(x*10000,y*10000)
 

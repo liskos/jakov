@@ -15,7 +15,7 @@ def clasterization(data,r):
 def visual(clasters):
     turtle.up()
     turtle.tracer(0)
-    colors = ["red","blue","pink","black"]
+    colors = ["red","blue","pink","black","grey","yellow","purple"]
     for i,clasters in enumerate(clasters):
         for x,y in clasters:
             turtle.goto(x*10,y*10)
@@ -41,6 +41,7 @@ data = [list(map(float,line.split()))for line in open("27data/27-71b.txt")]
 clasters = clasterization(data,0.4)
 print([len(c) for c in clasters])
 clasters =  [c for c in clasters if len(c) > 8]
+
 centroid = [get_centroid(c)for c in clasters]
 x, y = get_centroid(centroid)
 visual(clasters)
