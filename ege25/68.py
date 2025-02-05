@@ -14,11 +14,12 @@ p = 0
 b = []
 c = []
 for n in range(57888,74555+1):
-    s = str(n)
-    if int(s[0]) % 2 != 0 and int(s[1]) % 2 != 0 and int(s[2]) % 2 == 0 and int(s[3]) % 2 == 0 and int(s[4]) % 2 == 0:
+    a = [str(int(i) % 2) for i in str(n)]
+    a = "".join(a)
+    if a == "11000":
         b.append(n)
 for n in b:
-    if n % 6 != 0 and n % 7 != 0 and n % 8 != 0:
+    if n % 9 != 0 and n % 7 != 0 and n % 13 != 0:
         c.append(n)
 
 print(len(c),max(c)-min(c))

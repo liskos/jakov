@@ -6,8 +6,8 @@ def delitel(n):
             a.add(n//i)
     return sorted(a)
 
-for n in range(1820348,2880928):
-    divs = delitel(n)
+for n in range(1350,1698):
+    divs = delitel(n**2)
     if len(divs) == 5:
         print(*divs)
 

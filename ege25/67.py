@@ -2,7 +2,9 @@ p = 0
 b = []
 c = []
 for n in range(33333,55555+1):
-    if int(str(n)[2]) % 2 == 0 and int(str(n)[4]) % 2 == 0:
+    a = [str(int(i) % 2) for i in str(n)]
+    a = "".join(a)
+    if a == "11010":
         b.append(n)
 
 for n in b:

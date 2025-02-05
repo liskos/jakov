@@ -29,14 +29,24 @@ def get_centroid(claster):
 
 data = [list(map(float,line.split()))for line in open("27_A.txt")]
 clasters = clasterizasion(data,1)
+for i, c in enumerate(clasters):
+    print(i)
+    print("x", min(p[0] for p in c), max(p[0] for p in c))
+    print("y", min(p[1] for p in c), max(p[1] for p in c))
+
 centroid = [get_centroid(c) for c in clasters]
 x,y = sum(x[0] for x in centroid) / len(centroid),sum(x[1] for x in centroid) / len(centroid)
 print(x*10000,y*10000)
 
 
 data = [list(map(float,line.split()))for line in open("27_B.txt")]
-clasters = clasterizasion(data,1)
-centroid = [get_centroid(c) for c in clasters]
+clasters = clasterizasion(data,9)
+for i, c in enumerate(clasters):
+    print(i)
+    print("x", min(p[0] for p in c), max(p[0] for p in c))
+    print("y", min(p[1] for p in c), max(p[1] for p in c))
 visual(clasters)
+centroid = [get_centroid(c) for c in clasters]
+
 x,y = sum(x[0] for x in centroid) / len(centroid),sum(x[1] for x in centroid) / len(centroid)
 print(x*10000,y*10000)

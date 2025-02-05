@@ -8,12 +8,11 @@ def delitel(n):
 
 
 k = 0
-for n in range(3661,33625+1):
+for n in range(4986,32599+1):
     divs = delitel(n)
     if len(divs) == 4:
         k+=n
-        print(divs,n)
 print(k)
 
 
-#133428769
+#124478618

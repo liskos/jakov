@@ -6,11 +6,12 @@ def delitel(n):
             a.add(n//i)
     return a
 
-
+b = [x**2 for x in range(2,136)]
 k = 0
 for n in range(2945,18294+1):
     divs = delitel(n)
-    if len(divs) == 4:
-        k+=n
-        print(divs,n)
+    c = [x for x in b if n % x == 0]
+    if not c:
+        k += sum(map(int,str(n)))
+
 print(k)
