@@ -1,10 +1,12 @@
 def proverk(n):
-    for n in str(n):
-        if int(n) > 2:
+    for b in str(n):
+        if int(b) > 2:
             return False
 
     if sum(map(int,str(n))) % 10 == 0:
         return True
+    else:
+        return False
 
 def delitel(n):
     a = set()
@@ -15,12 +17,12 @@ def delitel(n):
     return a
 
 
-p = 1
+a = []
 for n in range(1000000,1300000+1):
     if proverk(n):
-        p+=1
-        if p % 10 == 0:
-            print(n,len(delitel(n)))
+        a.append(n)
+for i in a[9::10]:
+    print(i, len(delitel(i)))
 # 1000220 22
 # 1002000 78
 # 1010010 30
