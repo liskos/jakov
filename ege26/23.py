@@ -4,7 +4,7 @@ def f(filename):
     a = [int(file.readline()) for _ in range(n)]
     a = sorted(a,reverse=True)
     pobeda = a[:k]
-    prizer = a[k:-m]
+    prizer = a[k:m+k]
     return min(prizer),min(pobeda)
 
 

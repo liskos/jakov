@@ -5,8 +5,7 @@ def f(filename):
     a = sorted(a,reverse=True)
     print(a)
     dorogo = a[:m]
-    a = sorted(a)
-    budzet = a[:k]
+    budzet = a[-k:]
     print(budzet)
 
     return min(dorogo),sum(budzet)/len(budzet)

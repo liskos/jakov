@@ -5,3 +5,4 @@ def f(n):
         return 2*f(n+3)
 
 print(f(50)/f(110))
+print(4*8*5*7*6)

@@ -5,13 +5,8 @@ def f(filename):
     b = [x for x in a if x > 150]
     b = sorted(b)
     k = int(len(b)//2)
-    skid = b[:k]
-    if sum(skid)*0.8 != int(sum(skid)*0.8):
-        skids = sum(skid)*0.8 + 1
-    else:
-        skids = sum(skid)
-    a = [x for x in a if not skid.count(x)]
-    return int(sum(a)+skids),max(skid)
+    skid = int(sum(b[:k])*0.2)
+    return sum(a) - skid,b[:k][-1]
 
 
 print(f("32test.txt"))

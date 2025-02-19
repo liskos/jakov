@@ -1,15 +1,13 @@
 def f(filename):
     file = open(filename)
     s,n = map(int,file.readline().split())
-    a = [int(file.readline()) for _ in range(n)]
+    a = sorted([int(file.readline()) for _ in range(n)],reverse=True)
     b = []
-    for x in a:
-        if sum(b) + max(a) <= s:
-            b.append(max(a))
-            a.remove(max(a))
-        if sum(b) + min(a) <= s and sum(b) + max(a) > s:
-            b.append(min(a))
-            a.remove(min(a))
+    print(a)
+    for i in range(n):
+        if a[i] + sum(b) <= s:
+            b.append(a[i])
+
     return len(b),min(b)
 
 
