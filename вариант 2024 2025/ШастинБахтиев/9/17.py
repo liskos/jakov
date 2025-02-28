@@ -9,6 +9,6 @@ def f(x,y,z):
     return i == 2
 for i in range(len(a)-2):
     if f(a[i],a[i+1],a[i+2]) and a[i] * a[i+1] * a[i+2] > sum(b):
-        r.append(abs(a[i]*a[i+1]*a[i+2]))
+        r.append(a[i]*a[i+1]*a[i+2])
 
-print(len(r),min(r))
+print(len(r),abs(min(r)))
