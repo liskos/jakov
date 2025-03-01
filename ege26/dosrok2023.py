@@ -1,14 +1,17 @@
-def f(filename):
+def f(filename,k):
     file = open(filename)
     n = int(file.readline())
     a = [int(file.readline()) for _ in range(n)]
     a = sorted(a,reverse=True)
-    b = [a[x] for x in range (len(a)-1) if a[x+1] <= a[x]]
+    v = []
+    while a:
+        v.append(a[0]) # выбранные коржи
+        a.pop(0)
+        a = [x for x in a if x <= v[-1] - k]
+    return len(v),v[-1]
 
-    return len(b),
 
 
 
-
-print(f("dosrok23test.txt"))
-print(f("26data/26_15341.txt"))
+print(f("dosrok23test.txt",3))
+print(*f("26data/26_15341.txt",8))
