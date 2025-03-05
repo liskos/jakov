@@ -1,25 +1,17 @@
+
 def f(filename):
     file = open(filename)
     n = int(file.readline())
-    m = [int(file.readline()) for _ in range(n)]
-    m = sorted(m)
-    m.append(0)
-    print(m)
-    b = []
-    k = 0
-    d = []
-    for i in range(len(m)-2):
-        if abs(m[i] - m[i+1]) > 2:
-            k += 1
-            if k == 1:
-                b.append(m[i])
-        elif abs(m[i] - m[i+1]) <= 2:
-            break
-        else:
-            d.append(k)
-    print(b)
-    return max(d),max(b)
+    a = [int(file.readline()) for _ in range(n)]
+    a = sorted(a, reverse=True)
+    v = []
+    while a:
+        v.append(a[0]) # добавляем матрёшку
+        a.pop(0)
+        a = [x for x in a if x <= v[-1] - 3]
+    return len(v), v[-1]
+
+
 
 
 print(f("89test.txt"))
-print(f("26data/26-89.txt"))
