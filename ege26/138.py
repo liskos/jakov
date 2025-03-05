@@ -5,26 +5,22 @@ def f(filename):
     m = int(file.readline())
     a = [int(file.readline()) for _ in range(n)]
     a = sorted(a,reverse=True)
-    xd = [m] * k
-    print(xd)
-    print(a)
-    b = []
-    otv1 = 0
+    xol = [0] * k
     for i in range(k):
-        while len(a) != 0 and xd[i] >= min(a):
-            if xd[i] - max(a) >= 0:
-                xd[i] -= max(a)
-                a.remove(max(a))
-
-            if xd[i] - min(a) >= 0:
-                xd[i] -= min(a)
-                a.remove(min(a))
-            otv1 += 1
-        if i < len(xd):
-            b.append(xd[i])
-
-    print(xd)
-    return otv1
+        for x in a.copy():
+            if x <= m - xol[i]:
+                xol[i] += x
+                a.remove(x)
+            else:
+                break
+        for x in reversed(a.copy()):
+            if x <= m - xol[i]:
+                xol[i] += x
+                a.remove(x)
+            else:
+                break
+    ans1 = [i for i in range(k) if xol[i] != 0][-1]+ 1
+    return ans1, m - xol[ans1-1]
 
 
 
