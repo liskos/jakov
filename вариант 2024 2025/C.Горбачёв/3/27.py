@@ -27,7 +27,8 @@ def get_centroid(claster):
     return min(r)[1]
 
 data = [list(map(float,line.split()))for line in open("27A_19083.txt")]
-clasters = clasterizasion(data,2)
+clasters = clasterizasion(data,1)
+clasters = [c for c in clasters if len(c) >= 30]
 centroid = [get_centroid(c) for c in clasters]
 x,y = sum(x[0] for x in centroid)/len(centroid),sum(x[1] for x in centroid) / len(centroid)
 print(x*100000,y*100000)

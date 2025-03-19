@@ -18,8 +18,11 @@ for x in range(5000):
 for x in range(5000):
     if a[x] == " " and all(a[i] in "13" for i in f(x)):
         a[x] = "4"
-
-
-import sys
-sys.stdout = open("19.xls",mode="x")
-print(*a[1:5000],sep = "\t")
+for s in reversed(range(5000)):
+    if any(a[x]=="1" for x in f(s)):
+        print(s)
+        break
+print([x for x in range(5000) if s in f(x) ])
+print([x for x in range(5000) if a[x]=="2"])
+print([x for x in range(5000) if a[x]=="3"])
+print([x for x in range(5000) if a[x]=="4"])

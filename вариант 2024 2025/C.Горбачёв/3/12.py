@@ -6,9 +6,9 @@ def f(s):
             s = s.replace("2++","--",1)
         if "++++" in s:
             s = s.replace("++++","22",1)
-    return s
+    return s.count("+") + s.count("-")
 
 for i in range(1,1000):
     s = "-" + "+" * i
-    if len(f(s)) == 251:
+    if f(s) == 251:
         print(i)

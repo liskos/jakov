@@ -1,7 +1,7 @@
 def f(n):
     b = hex(n // 2)[2:]
     if n % 4 == 0:
-        b = '15' + b + 'C'
+        b = 'ege15' + b + 'C'
     else:
         b = 'F' + b + 'A0'
     return int(b,16)

@@ -9,7 +9,7 @@ def delitel(n):
 
 
 for i in range(1,10**9+1):
-    if fnmatch.fnmatch(str(i),"15*3*09"):
+    if fnmatch.fnmatch(str(i),"ege15*3*09"):
         if len(delitel(i)) == 9:
             divs = delitel(i)
             divs.remove(i)
