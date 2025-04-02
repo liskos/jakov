@@ -4,10 +4,10 @@ q = range(14*k,25*k+1)
 
 a1_best = 0
 a2_best = 0
-for a1 in range(1*k,5*k+1):
-    for a2 in range(23*k,28*k+1):
+for a1 in range(1*k,7*k+1):
+    for a2 in range(7*k,15*k+1):
         a = range(a1,a2+1)
-        if all([not((x in a) and not(x in q)) or ((x in p) or (x in q)) for x in range(1,100*k)]):
+        if all([not((x in p) == (x in q)) or not(x in a) for x in range(1,100*k)]):
             if a2 - a1 > a2_best - a1_best:
                 a1_best = a1
                 a2_best = a2

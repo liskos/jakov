@@ -1,5 +1,9 @@
 s = open("24data/k7b-3.txt").read()
 
-s = s.replace("C"," ").replace("D"," ")
+t = "BAFE"
+while t in s:
+    t += "BAFE"
+while t not in s:
+    t = t[:-1]
 
-print(max(map(len,s.split())))
+print(len(t))

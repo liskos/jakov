@@ -4,8 +4,8 @@ q = range(8*k,25*k+1)
 
 a1_best = 0
 a2_best = 500
-for a1 in range(1*k,100*k+1):
-    for a2 in range(a1*k,100*k+1):
+for a1 in range(12*k,18*k+1):
+    for a2 in range(21*k,28*k+1):
         a = range(a1,a2+1)
         if all([not((x in p) and (x in q)) or (x in a) for x in range(1,100*k)]):
             if a2 - a1 < a2_best - a1_best:
