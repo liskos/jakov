@@ -1,16 +1,16 @@
+import string
 s = open("24_21421.txt").read()
-k = ""
-b = []
-kol = 0
-for i in range(len(s)):
-    if s[i].isdigit():
-        k = k + s[i]
-        kol += 1
-    elif k == "":
-        pass
-    else:
-        b.append([int(k,36),kol])
-        k = ""
-        kol = 0
 
-print(max([x[0] for x in b if x[0] % 2 == 0]))
+# for i in "CDEFGHIJKLMNOPQRSTUVWXYZ":
+#     s = s.replace(i," ")
+# while " 0" in s:
+#     s = s.replace(" 0"," ")
+# r = [i for i in s.split() if i[-1] in "02468A" ]
+# m = max(r,key=len)
+# print(m,len(m))
+
+import re
+number = r"([1-9AB][0-9AB]*[02468A]|[02468A])"
+r = [i.group() for i in re.finditer(number, s)]
+m = max(r, key=len)
+print(len(m), m)

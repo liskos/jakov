@@ -6,6 +6,7 @@ s = s.replace("A"," ").replace("B"," ")
 s = s.split()
 
 for i in range(len(s)):
-    p += 1
+
     if len(s[-i]) > 5:
+        p += 1
         print(p,len(s),s[-i].replace("C","c"))
