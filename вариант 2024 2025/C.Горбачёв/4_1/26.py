@@ -5,8 +5,7 @@ def f(filename):
     a = sorted(a,reverse=True)
     print(a)
     skid = sum(a[:n//5]) * 0.5 + sum(a[n//5:])
-    neygadal = [a[x] for x in range(len(a)) if x % 4 == 0 and x != 0]
-    neygadal = sum(neygadal[:n//5]) * 0.5 + sum(a[:n]) - sum(neygadal)
+    neygadal = sum(a) - sum(a[4::5])*0.5
     return skid,neygadal
 
 

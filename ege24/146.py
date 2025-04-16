@@ -9,6 +9,6 @@ for i in range(len(s)):
     else:
         b.append(t)
         t = s[i]
+b.append(t)
 
-
-print(len(max([x for x in b])))
+print((max([len(x) for x in b])))

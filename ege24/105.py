@@ -6,9 +6,7 @@ maxstroka = ""
 index = 0
 
 for i in range(len(s)):
-    if t == "":
-        t = s[i]
-    elif t[-1] > s[i]:
+    if t and t[-1] < s[i]:
         t += s[i]
     else:
         t = s[i]
@@ -17,4 +15,4 @@ for i in range(len(s)):
         maxlen = len(t)
         index = i - len(t) + 1
 
-print(index)
+print(index+1)

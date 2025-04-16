@@ -8,7 +8,7 @@ index_prime_sumvola = 0
 for i in range(len(s)):
     if t == "": # если нет текущей строки, то начинаем новую
         t = s[i]
-    elif t[-1] <= s[i]:
+    elif t[-1] < s[i]:
         t += s[i] # если текущий элемент больше последнего элемента текущей строки, то добавляем его в конец строки
     else:
         t = s[i] # если текущий элемент меньше последнего элемента текущей строки,то начинаем новую строку с текущим элементом
@@ -20,4 +20,4 @@ for i in range(len(s)):
 
 print(maxlen)
 print(maxstroka)
-print(index_prime_sumvola)
+print(index_prime_sumvola+1)

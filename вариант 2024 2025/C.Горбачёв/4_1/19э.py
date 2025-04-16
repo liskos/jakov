@@ -5,7 +5,7 @@ a = [[" "] * 400 for _ in range(400)]
 
 for x in range(400):
     for y in range(400):
-        if (x + y) <= 64:
+        if (x + y) <= 63:
             a[x][y] = "0"
 
 
@@ -32,8 +32,9 @@ for x in range(400):
 
 import sys
 
-sys.stdout = open("19.xls",mode="x")
-for i in range(1,400):
-    print(*a[i][1:400],sep = "\t")
-print([i for i in range(1,64) if a[57][i] == "2"])
-print([i for i in range(1,64) if a[57][i] == "3"])
+# sys.stdout = open("19.xls",mode="x")
+# for i in range(1,400):
+#     print(*a[i][1:400],sep = "\t")
+print([i for i in range(1,400) if a[57][i] == "2"])
+print([i for i in range(1,400) if a[57][i] == "3"])
+print([i for i in range(1,400) if a[57][i] == "4"])

@@ -8,5 +8,5 @@ for i in s:
     else:
         b.append(t)
         t = i
-
+b.append(t)
 print(max(b,key=lambda x:len(x)))
