@@ -44,7 +44,7 @@ s = open("24data/24-299.txt").readline()
 
 numbers = r"([1-9][0-9]*|0)"
 
-proiz = rf"(({numbers}\*)*0(\*{numbers})*)"
-reg = rf"{proiz} (\+{proiz})+".replace(" ","")
+proiz = rf"(({numbers}[*])*[0]([*]{numbers})*)"
+reg = rf"{proiz}([+]{proiz})+"
 m = [len(x.group()) for x in re.finditer(reg,s)]
 print(max(m))

@@ -13,11 +13,11 @@ def f(n):
     if n % 3 == 0:
         b = b + b[-2:]
     else:
-        b = b + tr(n//3*3)
+        b = b + tr(n%3*3)
     return int(b,3)
 
 print(f(6),f(4))
 
-for i in range(2,1000):
+for i in range(3,1000):
     if f(i) < 151:
         print(i)

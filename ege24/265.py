@@ -6,10 +6,10 @@ l = 0
 for i in range(len(s)):
     if s[i] == "Y":
         k += 1
-        while k > 150:
-            if s[i] == "Y":
-                k -= 1
-            l += 1
+    while k > 150:
+        if s[l] == "Y":
+            k -= 1
+        l += 1
     m = max(m,i-l+1)
 
 print(m)
