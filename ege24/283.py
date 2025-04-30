@@ -1,19 +1,20 @@
 s = open("24data/24-280.txt").read()
 
-t = ""
 m = 0
-
-
-for i in range(len(s)):
-    if t.count("X") + t.count("Y") < 6:
-        t += s[i]
-        while t.count("X") + t.count("Y") > 5:
-            if t[0] == "Y" or t[0] == "X":
-                t = t[1:]
-            t = t[1:]
-    if t.count("X") + t.count("Y") < 6:
-        m = max(m,len(t))
-
-
+l = 0
+x = 0
+y = 0
+for r in range(len(s)):
+    if s[r] == "X":x += 1
+    if s[r] == "Y":y += 1
+    while x > 5 or y > 5:
+        if s[l] == "X": x -= 1
+        if s[l] == "Y": y -= 1
+        l += 1
+    if x <= 5 and y <= 5:
+        m = max(m, r-l+1)
 
 print(m)
+
+
+

@@ -1,5 +1,5 @@
 def f(x):
-    return x-3,x-5,(x+1)//3
+    return x-3,x-5,(x+2)//3
 
 a = [" "] * 400
 
@@ -20,7 +20,12 @@ for x in range(400):
     if a[x] == " " and all(a[j] in "13" for j in f(x)):
         a[x] = "4"
 
-import sys
-sys.stdout = open("19.xls",mode="x")
-
-print(*a[1:400],sep="\t")
+# import sys
+# sys.stdout = open("19.xls",mode="x")
+#
+# print(*a[1:400],sep="\t")
+print([i for i in range(400) if any(a[x]=="1" for x in f(i))])
+print([i for i in range(400) if a[i]=="1"])
+print([i for i in range(400) if a[i]=="2"])
+print([i for i in range(400) if a[i]=="3"])
+print([i for i in range(400) if a[i]=="4"])

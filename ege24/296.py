@@ -11,6 +11,6 @@ for i in range(len(s)):
         if s[l:l+2] == "CD": k -= 1
         l += 1
     if k == 160:
-        m = max(m,i-l+1)
+        m = max(m,i-l+2)
 
 print(m)
