@@ -5,9 +5,13 @@ l = 0
 k = 0
 t = ""
 for i in range(len(s)):
-    if t.count("RSQ") == 130 and t[-1] != "Q":
-        m = min(m,len(t))
-        break
-    t += s[i]
+    if s[i:i+3] == "RSQ":
+        k += 1
+        while k > 130:
+            if s[l:l+3] == "RSQ":
+                k -=1
+            l += 1
+    if k == 130:
+        m = min(m,i-l+1)
 
 print(m)

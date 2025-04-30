@@ -2,7 +2,7 @@ s = open("24data/24-295.txt").read()
 l = 0
 m = 0
 k = 0
-for i in range(len(s)-1):
+for i in range(len(s)):
     if s[i:i+2] == "DE":
         k += 1
 
