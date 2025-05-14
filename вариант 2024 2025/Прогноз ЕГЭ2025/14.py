@@ -1,5 +1,5 @@
 import string
-for x in "0123456789abcdefghijk":
+for x in "123456789abcdefghijk":
     s1 = int(f"{x}5B{x}8",21)
     s2 = int(f"H053{x}7",21)
     s = s1 + s2
