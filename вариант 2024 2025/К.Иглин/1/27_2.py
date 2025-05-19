@@ -1,13 +1,14 @@
 import math
 import turtle
 def clasterizasion(data):
-    clasters = [[],[]]
+    clasters = [[],[],[]]
     for x,y in data:
-        if y > 4.5 and x > 0:
+        if x > 4:
             clasters[0].append([x,y])
-        else:
+        elif x < -3.5:
             clasters[1].append([x,y])
-
+        else:
+            clasters[2].append([x,y])
     return clasters
 
 
@@ -53,14 +54,29 @@ def peres(k1, k2, b1, b2):
     y = k1 * x + b1
     return x,y
 
-data = [list(map(float,line.split())) for line in open("27A_18565.txt")]
+data = [list(map(float,line.split())) for line in open("27B_18565.txt")]
 clasters = clasterizasion(data)
 print(clasters)
 centroid = [get_centroid(c) for c in clasters]
 negativ = [get_negotiv(c) for c in clasters]
 print(centroid)
 print(negativ)
+a = []
 k1, b1 = get_koef(centroid[0], centroid[1])
 k2, b2 = get_koef(negativ[0], negativ[1])
 x, y = peres(k1,k2,b1,b2)
-print(x * 100, y * 100)
+a.append([x, y])
+
+k1, b1 = get_koef(centroid[2], centroid[1])
+k2, b2 = get_koef(negativ[2], negativ[1])
+x, y = peres(k1,k2,b1,b2)
+a.append([x, y])
+
+k1, b1 = get_koef(centroid[0], centroid[2])
+k2, b2 = get_koef(negativ[0], negativ[2])
+x, y = peres(k1,k2,b1,b2)
+a.append([x, y])
+print(a)
+x = (a[0][0] + a[1][0] + a[2][0]) / 3
+y = (a[0][1] + a[1][1] + a[2][1]) / 3
+print(x*100,y*100)
