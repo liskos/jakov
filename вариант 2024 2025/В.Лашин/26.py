@@ -5,21 +5,23 @@ def f(filename):
     print(len(a))
     b = []
     s = 0
-    k = 1
-    d = 0
+    k = 0
     for i in range(len(a)):
         b.append(a[i])
         b.sort()
-        d = max([item for item in range(len(b)) if a[i] == b[item]]) #index
-        if i == 0:
+        d = b.index(a[i]) #index
+        if len(b) == 1:
             continue
-        if a[i] == b[-1]:
+        if d == 0:
+            k += 1
+            s += b[1]
+        elif d == len(b)-1:
             s += b[-2]
             k += 1
         else:
             s += b[d+1] + b[d-1]
-            k += 1
-    return k,s,b
+            k += 2
+    return k,s
 
 print(f('26test.txt'))
 print(f("26.txt"))
