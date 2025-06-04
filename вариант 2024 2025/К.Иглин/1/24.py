@@ -1,13 +1,9 @@
 s = open("24_18562.txt").read()
 
-t = ""
+l = 0
 m = 0
-for i in range(len(s)):
-    if t and (t + s[i]).count("XYYYZ") == 0:
-        t += s[i]
-        m = max(m,len(t)+1)
-    else:
-        t = s[i]
-m = max(m,len(t))
-
+for r in range(len(s)):
+    while "XYYYZ" in s[l:r+1]:
+        l += 1
+    m = max(m, r-l +1)
 print(m)
