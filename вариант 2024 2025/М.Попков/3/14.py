@@ -8,12 +8,12 @@ def p(n):
     return s
 
 b = []
-for x in range(2006,10**4+1):
+for x in range(1,2006):
     s = 5 ** 150 + 5 ** 98 - x
     s = p(s)
     b.append(s.count("0"))
 
-for x in range(2006,10**4+1):
+for x in range(1,2006):
     s = 5 ** 150 + 5 ** 98 - x
     s = p(s)
     if s.count("0") == max(b):
